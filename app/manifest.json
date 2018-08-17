@@ -12,7 +12,8 @@
     "scripts": [
       "scripts/chromereload.js",
       "scripts/background.js"
-    ]
+    ],
+    "persistent": true
   },
   "permissions": [
     "clipboardWrite",
