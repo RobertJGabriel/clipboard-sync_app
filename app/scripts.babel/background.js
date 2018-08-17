@@ -1,4 +1,4 @@
-let randomId = '_' + Math.random().toString(36).substr(2, 9);
+
 
 /**
  * @param  {} info
@@ -32,7 +32,7 @@ function popup() {
   const opt = {
     type: 'basic',
     title: 'New Data Synced',
-    message: `New Data Synced`,
+    message: 'New Data Synced',
     iconUrl: chrome.runtime.getURL('images/icon-128.png'),
     requireInteraction: false
   };
