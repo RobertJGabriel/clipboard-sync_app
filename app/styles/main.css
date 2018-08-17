@@ -1,0 +1,28 @@
+body {
+  padding: 20px;
+  background-color: #fafafa;
+  width: 320px;
+  height: 400px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+}
+
+.container {
+  padding: 0 !important;
+}
+
+h4 {
+  font-size: 2.5rem;
+  color: #6e7dd3;
+  text-align: center;
+  font-weight: bold;
+}
+
+#editor {
+  height: -webkit-fill-available;
+}
+
+.form-control{
+  font-size: 14px;
+}
