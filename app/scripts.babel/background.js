@@ -1,3 +1,5 @@
+let randomId = '_' + Math.random().toString(36).substr(2, 9);
+
 /**
  * @param  {} info
  * @param  {} tab
@@ -17,11 +19,28 @@ function save(info) {
     }, () => true)
   });
 
+}
 
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+  popup();
+});
+
+
+function popup() {
+
+  const opt = {
+    type: 'basic',
+    title: 'New Data Synced',
+    message: `New Data Synced`,
+    iconUrl: chrome.runtime.getURL('images/icon-128.png'),
+    requireInteraction: false
+  };
+  chrome.notifications.create('New Data Synced', opt);
 }
 
 chrome.contextMenus.create({
-  title: 'Snip',
+  title: 'Sync',
   contexts: ['selection'],
   onclick: save
 });

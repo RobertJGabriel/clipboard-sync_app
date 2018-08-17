@@ -15,6 +15,15 @@ const vm = new Vue({
     update: function update(e) {
       this.editor = e.target.value;
     },
+    syncData: function syncData(changes, areaname) {
+      self = this;
+      if (areaname !== 'sync') return false;
+      if (changes.stored && changes.stored.newValue) {
+        console.log(changes.stored.newValue);
+        self.editor = changes.stored.newValue;
+      }
+
+    },
     save: function save(input) {
       chrome.storage.sync.set({
         'stored': input
@@ -33,3 +42,8 @@ const vm = new Vue({
     }
   }
 });
+
+
+
+
+chrome.storage.onChanged.addListener(vm.syncData.bind());
